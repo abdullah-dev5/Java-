@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Task6Extended {
+public class OddsNumber {
 
     public static void main(String[] args)
     {
