@@ -1,0 +1,63 @@
+
+
+
+	let me explain how we can use bitwise Operator..
+	Xor ( ^ ) is a bitwise operator used in binary operations..
+	as we know that "1" represent True . And "0" represent False.
+	So, when we use Xor operator in Comparing to Expression And 
+	binary conversions..
+		  XOR  (^)
+		   P  |  Q |  ^ |
+		   1  |  1 |  0 | if both are true then it's False
+		   1  |	 0 |  1 |if P is true but Q is False Final will be True
+		   0  |  1 |  1 |if P is false but Q is True Final will be True
+		   0  |	 0 |  0 |if both are false then it's False.
+		   AND  (&)
+		   P  |  Q |  & |
+		   1  |  1 |  0 | if both are true then it's True.
+		   1  |	 0 |  1 |if P is true but Q is False Final will be False.
+		   0  |  1 |  1 |if P is false but Q is True Final will be False.
+		   0  |	 0 |  0 |if both are false then it's False.
+		  OR    (|)
+		   P  |  Q |  | |
+		   1  |  1 |  0 | if both are true then it's True.
+		   1  |	 0 |  1 |if P is true but Q is False Final will be True.
+		   0  |  1 |  1 |if P is false but Q is True Final will be True.
+		   0  |	 0 |  0 |if both are false then it's False.
+		  
+
+		now let me explain that how to convert or calculate Binary into Decimal
+			or Decimal to Binary conversion..
+			
+			let's Suppose we need to find the 'A' Capitals binary number	
+			As we know that A=65
+						64 32 16 8 4 2 1
+		the numbers above as power 2
+		their is restriction we need to that power of 2 which is less then decimal number 
+		see we have 65 , we took 64 power 2 digit rather then 128 beacuse 128 is large than 65
+		be carefull when you are convert 
+			now use the table (64 32 16 8 4 2 1)
+			and find their same eqauls to (A's decimal 65)
+				64 32 16 8 4 2 1
+				1  0  0  0 0 0 1
+				-----------------
+				64 +           1 = 65
+				here it makes sense that those digits which sums equal to decimal Number 
+				are assigned 1 .and those number which have following 1 will be added.
+
+				Now we can use bitwise operation Beacuse we knows that how to find any character or Numbers 
+				Binary Code.
+				
+				let's use Binary AND operation on P and A .. P has decimal value 80 and A has 65.
+				so we will use table   64 32 16 8 4 2 1
+						-------------------------
+						P 80=	1  0  1 0 0 0 0			  64+16=80
+						A 65=   1  0  0 0 0 0 1                   64+1=65
+						-------------------------
+				we are using AND(&)	1  0  0 0 0 0 0   = 64 So, AND is equals 64
+						-------------------------
+				now we use   OR (|)	1  0  1 0 0 0 1    = 81 So, OR is equals 81
+						---------------------------
+ 				now we use  XOR (^)	0  0  1 0 0 0 1    = 17 So, XOR is equals 17
+
+				
