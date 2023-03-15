@@ -1,0 +1,116 @@
+class Person
+{
+    private String name ;
+    private String gender ;
+    private int age;
+    Person ()
+    {
+        name=gender=null;
+        age=0;
+    }
+    Person (String name ,String gender, int age)
+    {
+        this.name=name;
+        this.gender=gender;
+        this.age=age;
+
+    }
+    Person (Person obj)
+    {
+        this.name=obj.name;
+        this.gender=obj.gender;
+        this.age=obj.age;
+
+    }
+
+
+    void setName(String name)
+    {
+        this.name=name;
+    }
+    String getName ()
+    {
+        return this.name;
+
+    }
+    void setGender(String gender)
+    {
+        this.gender=gender;
+    }
+    String getGender()
+    {
+
+        return this.gender;
+    }
+    void setAge(int age)
+    {
+        this.age=age;
+    }
+    int getAge()
+    {
+        return this.age;
+    }
+
+    void sayHello()
+    {
+        System.out.println("Hello : " +name +" How are you \n I hope you are fine ");
+    }
+    boolean isAdult()// checking is adult or not
+    {
+        if(age>17)
+        {
+            return true;
+        }
+    else{
+        return false;
+        }
+    }
+    void getIsAdult (){
+    if(isAdult()==false)
+    {
+        System.out.println(" is Adult : No");
+    }
+    else{
+        System.out.println(" is Adult : yes");
+    }
+}
+    String getSalutation()// if male increment Mr.if female increment miss
+    {
+        if(gender.equals("female"))
+        {
+            name=" Miss."+name;
+        }
+        else{
+            name= " Mr."+ name;
+        }
+        return name;
+    }
+
+
+void dsiplay()
+ {
+    System.out.println(" Name : "+getSalutation()+" .\n Gender : "+gender+" .\n Age : "+age);
+ }
+}
+public class Main {
+    public static void main(String[] args)
+    {   //using  parameterized Constructors
+        Person p = new Person("Asma","female",19);
+        p.dsiplay();
+        p.getIsAdult();
+        //using getter setter methods
+        Person p2= new Person();
+        p2.setName("Rehan");
+        p2.setGender("male");
+        p2.setAge(21);
+      p2.sayHello();
+      System.out.println(p2.getName()) ;
+      System.out.println(p2.getGender()) ;
+      System.out.println(p2.getAge())        ;
+      p2.getSalutation();
+      p2.getIsAdult();
+      // using object as paramter and Copy Constructor
+      Person p3 = new Person(p);
+      p3.dsiplay();
+    }
+}
