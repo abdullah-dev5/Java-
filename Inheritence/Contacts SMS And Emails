@@ -1,0 +1,119 @@
+class Message {
+
+       private String text;
+     Message()
+     {
+         this.text=" ";
+     }
+     Message(String text)
+     {
+         this.text=text;
+     }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+    public String toString ()
+        {
+            return text;
+        }
+}
+
+class SMS extends Message
+{
+  private  String recipientContactNo ;
+
+    public SMS() {
+        this.recipientContactNo =" ";
+    }
+
+    public SMS(String text, String recipientContactNo) {
+        super(text);
+        this.recipientContactNo = recipientContactNo;
+    }
+
+    public String getRecipientContactNo() {
+        return recipientContactNo;
+    }
+
+    public void setRecipientContactNo(String recipientContactNo) {
+        this.recipientContactNo = recipientContactNo;
+    }
+
+
+
+    public String toString ()
+    {
+        return super.toString()+" \n by : "+getRecipientContactNo();
+
+    }
+
+}
+class Email extends Message
+{
+    private String sender;
+    private String reciever ;
+    private String subjects;
+
+
+    public Email(String sender, String reciever, String subjects) {
+        this.sender = " ";
+        this.reciever = " ";
+        this.subjects = " ";
+    }
+
+    public Email(String text,String subjects, String sender, String reciever ) {
+        super(text);
+        this.sender = sender;
+        this.reciever = reciever;
+        this.subjects = subjects;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public String getReciever() {
+        return reciever;
+    }
+
+    public void setReciever(String reciever) {
+        this.reciever = reciever;
+    }
+
+    public String getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(String subjects) {
+        this.subjects = subjects;
+    }
+
+    public String toString ()
+    {
+        return ("Subjects :"+getSubjects()+ "\nText : " + super.toString() + "\nSend By : "+getSender() + "\nRecived by : " + getReciever());
+    }
+}
+public class Main2
+{
+    public static void main(String [] args )
+    {
+        SMS sms = new SMS("Hello this java Class ","03023000555");
+       System.out.println( sms.toString());
+     //   sms.getRecipientContactNo();
+        Email em = new Email("Respected coordinator grant me 5 days leave ","Eid leave","Alan","Coordinator");
+        System.out.println( em.toString());
+    }
+
+}
+
+
+
+
+
+ 
+
