@@ -1,0 +1,58 @@
+class Shape
+{
+    String color;
+
+    public Shape(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public double getArea() {
+        return 0;
+    }
+
+}
+
+class Circle extends Shape
+{
+    private double radius;
+
+    public Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
+    @Override
+    public double getArea() {
+        return 3.142*(radius*radius);
+    }
+}
+
+class Reactangle extends Shape{
+    int height;
+    int width;
+
+    public Reactangle(String color, int height, int width) {
+        super(color);
+        this.height = height;
+        this.width = width;
+    }
+
+    @Override
+    public double getArea() {
+        return (width*height);
+    }
+}
+public class Main3 {
+    public static void main (String [] args)
+    {
+
+        Circle circle = new Circle("blue ",5 );
+        System.out.println("Circle Area : "+circle.getArea());
+        Reactangle reactangle = new Reactangle("Red ", 5,4);
+        System.out.println("Reactangle Area : "+reactangle.getArea());
+    }
+}
+
