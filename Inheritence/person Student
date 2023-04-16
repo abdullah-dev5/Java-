@@ -1,0 +1,106 @@
+import java.util.*;
+class Person
+{
+    String firstName ;
+    String lastName ;
+
+    Person ()
+    {
+        this.firstName ="";
+        this.lastName="";
+
+    }
+    Person (String firstName ,String lastName)
+    {
+        this.firstName =firstName;
+        this.lastName=lastName;
+    }
+
+    void setFirstName (String firstName )
+    {
+
+        this.firstName= firstName;
+    }
+    String getFirstName ()
+    {
+        return firstName ;
+    }
+
+    void setLastName (String lastName )
+    {
+
+        this.lastName= lastName;
+    }
+    String getLastName ()
+    {
+        return lastName ;
+    }
+
+    void displayInfo()
+
+    {
+        System.out.println("First_Name : "+firstName+ " Last_Name : "+lastName);
+    }
+
+}
+
+class Students extends Person{
+
+    private String teacherName ;
+    private String id;
+    private String course;
+
+    Students(String firstName,String lastName,String teacherName, String course ,String id)
+    {
+        super(firstName ,lastName);
+        this.teacherName=teacherName;
+        this.course=course;
+        this.id=id;
+    }
+
+    public String getTeacherName() {
+
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
+
+    @Override
+    void displayInfo()
+    {
+        super.displayInfo();
+        System.out.println(" teacher_Name : " + teacherName +" I.D No : "+ id + " Course : "+course );
+
+    }
+
+}
+
+class Main
+{
+
+    public static void main(String [] args)
+    {
+
+        Students st = new Students("Saif","latki", "Sana","023-22-0123","BSCS")    ;
+        st.displayInfo();
+    }
+
+}
