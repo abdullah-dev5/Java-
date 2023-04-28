@@ -1,0 +1,166 @@
+
+
+
+class Animal
+{
+
+    private String name;
+    private int age;
+    private String gender;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Animal() {
+        this.age=0;
+        this.gender=this.name= " ";
+
+    }
+
+    public Animal(String name, int age, String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+
+    void soundProduced ()
+    {
+    }
+
+}
+
+class Dog extends Animal
+{
+
+    Dog()
+    {
+        super();
+    }
+
+
+    public Dog(String name, int age, String gender) {
+        super(name, age, gender);
+    }
+
+    @Override
+    void soundProduced() {
+        super.soundProduced();
+        System.out.println("Boww waaw");
+    }
+
+}
+
+class Frog extends  Animal
+{
+    public Frog() {
+    }
+
+    public Frog(String name, int age, String gender) {
+        super(name, age, gender);
+    }
+    void soundProduced() {
+        super.soundProduced();
+        System.out.println("Tarr Tarr TarA");
+    }
+}
+class Cat extends Animal
+{
+
+    public Cat() {
+    }
+
+    public Cat(String name, int age, String gender) {
+        super(name, age, gender);
+    }
+
+    @Override
+    void soundProduced() {
+        super.soundProduced();
+        System.out.println("moew moew moew ");
+    }
+}
+class Kitten extends Animal
+{
+    public Kitten() {
+
+    }
+
+    public Kitten(String name, int age) {
+        super(name, age,"Female");
+    }
+
+    @Override
+    void soundProduced() {
+        super.soundProduced();
+        System.out.println("meow meow");
+    }
+}
+class Tomcat extends Animal
+{
+
+    public Tomcat() {
+    }
+
+    public Tomcat(String name, int age) {
+        super(name, age, "Male");
+    }
+
+    @Override
+    void soundProduced() {
+        super.soundProduced();
+        System.out.println("Maow ooo waaw");
+    }
+}
+
+
+public class SoundProduced {
+
+
+    public static  void main(String [] args )
+    {
+        Dog d = new Dog("Johnny",8,"male");
+        d.soundProduced();
+
+        Frog f = new Frog("Sins",3,"female");
+        f.soundProduced();
+
+        Cat  c = new Cat("Tommy",4,"Male");
+        c.soundProduced();
+
+        Kitten k = new Kitten("Spike",5);
+        k.soundProduced();
+
+        Tomcat t = new Tomcat("Hurry", 4);
+        t.soundProduced();
+
+        Animal [] animals= new Animal [10];
+
+        for(int i=0; i<animals.length; i++)
+        {
+
+        }
+
+    }
+
+}
