@@ -1,0 +1,24 @@
+
+import javax.swing.*;
+import java.awt.*;
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame();
+        frame.setTitle("Java Graphics Intetrface ");//set the title of frame
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//exit out  Application
+        frame.setResizable(false);//prevent frame from being resized.
+        frame.setSize(450,450);//set the size of frame.
+        frame.setVisible(true);//make frame Visibile. by default it is false.
+
+         ImageIcon imageIcon = new ImageIcon("download.png");//set ImageIcon.
+         frame.setIconImage(imageIcon.getImage());//change icon of the frame with photo.
+      //  frame.getContentPane().setBackground(Color.black);//set color to the background of frame.
+        frame.getContentPane().setBackground(new Color(0x12345));//By setting values in background method we can create custom colors.
+        // fav blue color number 0x12345
+        // for white color (255,255,255)
+        //google rgb numbers for colors.
+    }
+}
