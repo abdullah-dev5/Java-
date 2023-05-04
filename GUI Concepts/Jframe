@@ -1,0 +1,17 @@
+
+import javax.swing.*;
+
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame();
+        frame.setTitle("Java Graphics Intetrface ");//set the title of frame
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//exit out  Application
+        frame.setResizable(false);//prevent frame from being resized.
+        frame.setSize(450,450);//set the size of frame.
+        frame.setVisible(true);//make frame Visibile. by default it is false.
+        
+    }
+}
