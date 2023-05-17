@@ -1,0 +1,99 @@
+
+class InvalidExperince  extends Exception{
+
+    int exp;
+    String email;
+
+    InvalidExperince()
+    {
+        System.out.println("Invalid Exp");
+    }
+
+
+
+}
+class InvalidEmailsFormat extends Exception{
+
+
+    //Regular expression to Check if the email Format .
+    //we Google Regular Expression of Emails Format. then Copy .
+    //[a-z0-9]+@[a-z]+\.[a-z]{2,3}
+
+    InvalidEmailsFormat()
+    {
+
+        System.out.println("Invalid emails format");
+
+    }
+}
+
+
+class User {
+
+
+    private int exp;
+    private  String emails;
+
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp) throws InvalidExperince{
+        if(exp < 0 || exp> 50)
+        {
+            throw new InvalidExperince();
+
+        }
+        else
+        {
+            this.exp = exp;
+        }
+
+
+    }
+
+    public String getEmails() {
+        return emails;
+    }
+
+    public void setEmails(String emails)throws InvalidEmailsFormat {
+        if(emails.matches("[a-z0-9]+@[a-z]+\\.[a-z]{2,3}")) {
+            this.emails = emails;
+        }
+        else {
+            throw new InvalidEmailsFormat();
+        }
+
+    }
+
+    void display()
+    {
+
+        System.out.println("Emails "+emails+ " Exp "+exp);
+    }
+}
+
+public class Main {
+
+
+    public static void main(String[] args) throws InvalidExperince,InvalidEmailsFormat {
+
+        User user = new User();
+
+    try {
+        user.setEmails("alan5@gmail.com");
+    } catch(InvalidEmailsFormat exp)
+    {
+        System.out.println(exp.getMessage());
+    }
+    try {
+        user.setExp(5);
+    }
+    catch(InvalidExperince exp)
+    {
+
+        System.out.println(exp.getMessage());
+    }
+        user.display();
+    }
+}
