@@ -1,0 +1,47 @@
+import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.border.Border;
+import java.awt.*;
+public class JlabelConcpt {
+    public static void main(String[] args) {
+    Border border = BorderFactory.createLineBorder(Color.blue);//to set border  and Color of border
+
+    ImageIcon icon = new ImageIcon("download.png");
+
+
+    JLabel label = new JLabel();
+      label.setText("Alan walker is Alone.");//set text in label.
+        label.setIcon(icon);// added image into label
+        label.setHorizontalTextPosition(JLabel.CENTER);// set text Right , Left or center of imageicon.
+        label.setVerticalTextPosition(JLabel.TOP);// set text Top or Bottom of imageicon.
+        label.setForeground(new Color(0x12345));//set Font Color of text. using RGB or hexa values por numbers.
+        label.setFont(new Font("MV Boli",Font.BOLD,20));// set text Font attributes .Font style ,font size.
+        label.setIconTextGap(0);// Set gap text to image.
+        label.setBackground(Color.GRAY);// set background color.
+        //alternative of setbackground method of label  beacuse the upper one not works sometimes.
+        label.setOpaque(true);//this will display background color.
+        label.setBorder(border); //set border into the label.
+        label.setVerticalAlignment(JLabel.CENTER);// set verticall Position of Icon+Text within label.
+        label.setHorizontalAlignment(JLabel.CENTER);// set horizentally
+         //label.setBounds(100,100,250,250);// set x,y positions within frame as well as diminissions.
+
+
+
+
+        JFrame frame = new JFrame();
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       // frame.setLayout(null);
+        //frame.setSize(500,500);
+        frame.add(label);//adding labels components into frame.
+        frame.pack();// it is a by deafualt method to set layout
+        //when we using this we should comment or remove following methods beacuse oit cover all of them.
+        // frame.setLayout(null);
+        //frame.setSize(500,500);
+        //label.setBounds(100,100,250,250);
+
+    }
+}
+
+
+
